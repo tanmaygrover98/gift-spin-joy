@@ -25,7 +25,7 @@ export const CongratulationsPopup: React.FC<CongratulationsPopupProps> = ({
 
   return (
     <Dialog open={isOpen}>
-      <DialogContent className="sm:max-w-md animate-bounce-in animate-delay-200">
+      <DialogContent className="sm:max-w-md animate-bounce-in animate-delay-2000">
         <DialogHeader>
           <DialogTitle className="text-3xl font-bold text-center">
             🎉 Congratulations! 🎉
