@@ -25,7 +25,7 @@ export const CongratulationsPopup: React.FC<CongratulationsPopupProps> = ({
 
   return (
     <Dialog open={isOpen}>
-      <DialogContent className="sm:max-w-md animate-bounce-in">
+      <DialogContent className="sm:max-w-md animate-bounce-in animate-delay-200">
         <DialogHeader>
           <DialogTitle className="text-3xl font-bold text-center">
             🎉 Congratulations! 🎉
@@ -40,10 +40,7 @@ export const CongratulationsPopup: React.FC<CongratulationsPopupProps> = ({
             </p>
           </div>
           <div className="space-y-3">
-            <p className="text-muted-foreground">
-              Category: {prize}
-            </p>
-            <Button 
+            <Button
               onClick={onTryAgain}
               className="w-full bg-gradient-to-r from-wheel-segment3 to-wheel-segment4 hover:from-wheel-segment3/90 hover:to-wheel-segment4/90 text-white font-bold py-3 text-lg rounded-lg shadow-lg transition-all duration-200 hover:scale-105"
             >

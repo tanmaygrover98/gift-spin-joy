@@ -9,11 +9,14 @@ interface WelcomePopupProps {
 }
 
 const purchaseItems = [
-  'Electronics',
-  'Clothing',
-  'Books',
-  'Home & Garden',
-  'Sports Equipment'
+  'iPhone 16 Pro 256GB: 712345678905',
+  'Samsung S25 Ultra 256GB: 754321098768',
+  'LG Washing Machine WM3500HWA: 811223344557',
+  'Audio-Technica Headphones ATH-M50x: 049613 000546',
+  'Sony WH-1000XM6 Headphones: 027242925349',
+  'Dyson Hair Straightener: 884622000191',
+  'Braun Beard Trimmer 7: 0 69055 88912 4',
+  'Philips Trimmer Series 7000: 076352900213'
 ];
 
 export const WelcomePopup: React.FC<WelcomePopupProps> = ({ isOpen, onSubmit }) => {
@@ -30,7 +33,7 @@ export const WelcomePopup: React.FC<WelcomePopupProps> = ({ isOpen, onSubmit }) 
       <DialogContent className="sm:max-w-md animate-bounce-in">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center bg-gradient-to-r from-primary to-wheel-segment5 bg-clip-text text-transparent">
-            Welcome to Spin & Win!
+            Welcome to Spin the Wheel!
           </DialogTitle>
         </DialogHeader>
         <div className="space-y-6 py-4">

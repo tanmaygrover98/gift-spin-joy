@@ -22,7 +22,10 @@ const Index = () => {
   const handleSpinComplete = (result: string) => {
     setIsSpinning(false);
     setPrize(result);
-    setShowCongratulations(true);
+    // Add delay before showing congratulations
+    setTimeout(() => {
+      setShowCongratulations(true);
+    }, 1000);
   };
 
   const handleTryAgain = () => {
@@ -37,7 +40,7 @@ const Index = () => {
       {/* Header */}
       <div className="text-center mb-12">
         <h1 className="text-6xl font-bold bg-gradient-to-r from-primary via-wheel-segment4 to-wheel-segment5 bg-clip-text text-transparent mb-4">
-          Spin & Win
+          Spin the Wheel
         </h1>
         <p className="text-xl text-muted-foreground">
           Test your luck and win amazing prizes!
