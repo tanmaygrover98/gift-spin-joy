@@ -39,28 +39,19 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Wheel Colors */
-    --wheel-segment-1: 15 89% 60%;   /* Orange/Red */
-    --wheel-segment-2: 45 93% 58%;   /* Yellow */
-    --wheel-segment-3: 120 50% 50%;  /* Green */
-    --wheel-segment-4: 220 89% 60%;  /* Blue */
-    --wheel-segment-5: 280 85% 65%;  /* Purple */
-
-    /* Gradients - these will be used in Tailwind classes */
+    --wheel-segment-1: 15 89% 60%;
+    --wheel-segment-2: 45 93% 58%;
+    --wheel-segment-3: 120 50% 50%;
+    --wheel-segment-4: 220 89% 60%;
+    --wheel-segment-5: 280 85% 65%;
 
     --sidebar-background: 0 0% 98%;
-
     --sidebar-foreground: 240 5.3% 26.1%;
-
     --sidebar-primary: 240 5.9% 10%;
-
     --sidebar-primary-foreground: 0 0% 98%;
-
     --sidebar-accent: 240 4.8% 95.9%;
-
     --sidebar-accent-foreground: 240 5.9% 10%;
-
     --sidebar-border: 220 13% 91%;
-
     --sidebar-ring: 217.2 91.2% 59.8%;
   }
 
