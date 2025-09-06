@@ -1,25 +1,26 @@
 import React, { useState } from "react";
 import { cn } from "@/lib/utils";
-import { itemPrizeMap } from "@/components/WelcomePopup";
 
 interface SpinWheelProps {
-  onSpinComplete: (result: { label: string; prize: string; selectedItem: string }) => void;
+  onSpinComplete: (result: string) => void;
   isSpinning: boolean;
   onSpinStart: () => void;
-  selectedItem: string;
 }
 
+const segments = [
+  { label: "Under 100", color: "#ff6b6b" }, // Red-orange
+  { label: "Under 200", color: "#4ecdc4" }, // Teal
+  { label: "Under 500", color: "#45b7d1" }, // Blue
+  { label: "Under 1000", color: "#96ceb4" }, // Green
+  { label: "Under 2000", color: "#feca57" }, // Yellow
+];
 
 export const SpinWheel: React.FC<SpinWheelProps> = ({
   onSpinComplete,
   isSpinning,
   onSpinStart,
-  selectedItem,
 }) => {
   const [rotation, setRotation] = useState(0);
-  
-  // Get segments based on selected item
-  const segments = itemPrizeMap[selectedItem] || [];
 
   const handleSpin = () => {
     if (isSpinning) return;
@@ -43,12 +44,7 @@ export const SpinWheel: React.FC<SpinWheelProps> = ({
 
     // Delay to match animation duration
     setTimeout(() => {
-      const winningSegment = segments[winningSegmentIndex];
-      onSpinComplete({
-        label: winningSegment.label,
-        prize: winningSegment.prize,
-        selectedItem: selectedItem
-      });
+      onSpinComplete(segments[winningSegmentIndex].label);
     }, 3000);
   };
 

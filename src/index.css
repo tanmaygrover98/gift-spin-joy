@@ -39,11 +39,16 @@ All colors MUST be HSL.
     --radius: 0.75rem;
 
     /* Wheel Colors */
-    --wheel-segment-1: 15 89% 60%;
-    --wheel-segment-2: 45 93% 58%;
-    --wheel-segment-3: 120 50% 50%;
-    --wheel-segment-4: 220 89% 60%;
-    --wheel-segment-5: 280 85% 65%;
+    --wheel-segment-1: 0 85% 55%;
+    /* red */
+    --wheel-segment-2: 40 90% 55%;
+    /* orange-yellow */
+    --wheel-segment-3: 120 70% 45%;
+    /* green */
+    --wheel-segment-4: 200 85% 55%;
+    /* blue-cyan */
+    --wheel-segment-5: 280 70% 55%;
+    /* purple */
 
     --sidebar-background: 0 0% 98%;
     --sidebar-foreground: 240 5.3% 26.1%;
