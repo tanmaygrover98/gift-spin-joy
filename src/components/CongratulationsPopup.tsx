@@ -1,6 +1,11 @@
-import React from 'react';
-import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
-import { Button } from '@/components/ui/button';
+import React from "react";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+} from "@/components/ui/dialog";
+import { Button } from "@/components/ui/button";
 
 interface CongratulationsPopupProps {
   isOpen: boolean;
@@ -8,24 +13,17 @@ interface CongratulationsPopupProps {
   onTryAgain: () => void;
 }
 
-const prizeMap: Record<string, string> = {
-  'Under 100': 'Pen',
-  'Under 200': 'Diary',
-  'Under 500': 'Gift Card',
-  'Under 1000': 'Headphones',
-  'Under 2000': 'Watch'
-};
 
-export const CongratulationsPopup: React.FC<CongratulationsPopupProps> = ({ 
-  isOpen, 
-  prize, 
-  onTryAgain 
+export const CongratulationsPopup: React.FC<CongratulationsPopupProps> = ({
+  isOpen,
+  prize,
+  onTryAgain,
 }) => {
-  const giftItem = prizeMap[prize];
+  const giftItem = prize; // Prize is now the actual gift item
 
   return (
     <Dialog open={isOpen}>
-      <DialogContent className="sm:max-w-md animate-bounce-in animate-delay-2000">
+      <DialogContent className="sm:max-w-md animate-bounce-in animate-delay-3000">
         <DialogHeader>
           <DialogTitle className="text-3xl font-bold text-center">
             🎉 Congratulations! 🎉
@@ -36,7 +34,7 @@ export const CongratulationsPopup: React.FC<CongratulationsPopupProps> = ({
             <div className="text-6xl mb-4">🏆</div>
             <p className="text-xl font-semibold mb-2">You won:</p>
             <p className="text-3xl font-bold bg-gradient-to-r from-primary to-wheel-segment5 bg-clip-text text-transparent">
-              {giftItem}
+              {giftItem || "Amazing Prize!"}
             </p>
           </div>
           <div className="space-y-3">

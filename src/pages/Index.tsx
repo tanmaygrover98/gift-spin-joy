@@ -1,16 +1,18 @@
-import React, { useState, useEffect } from 'react';
-import { SpinWheel } from '@/components/SpinWheel';
-import { WelcomePopup } from '@/components/WelcomePopup';
-import { CongratulationsPopup } from '@/components/CongratulationsPopup';
+import React, { useState, useEffect } from "react";
+import { SpinWheel } from "@/components/SpinWheel";
+import { WelcomePopup } from "@/components/WelcomePopup";
+import { CongratulationsPopup } from "@/components/CongratulationsPopup";
 
 const Index = () => {
   const [showWelcome, setShowWelcome] = useState(true);
   const [showCongratulations, setShowCongratulations] = useState(false);
   const [isSpinning, setIsSpinning] = useState(false);
-  const [prize, setPrize] = useState('');
+  const [prize, setPrize] = useState("");
   const [hasSubmitted, setHasSubmitted] = useState(false);
+  const [selectedItem, setSelectedItem] = useState("");
 
   const handleWelcomeSubmit = (selectedItem: string) => {
+    setSelectedItem(selectedItem);
     setHasSubmitted(true);
     setShowWelcome(false);
   };
@@ -19,9 +21,9 @@ const Index = () => {
     setIsSpinning(true);
   };
 
-  const handleSpinComplete = (result: string) => {
+  const handleSpinComplete = (result: { label: string; prize: string; selectedItem: string }) => {
     setIsSpinning(false);
-    setPrize(result);
+    setPrize(result.prize);
     // Add delay before showing congratulations
     setTimeout(() => {
       setShowCongratulations(true);
@@ -30,8 +32,9 @@ const Index = () => {
 
   const handleTryAgain = () => {
     setShowCongratulations(false);
-    setPrize('');
+    setPrize("");
     setHasSubmitted(false);
+    setSelectedItem("");
     setShowWelcome(true);
   };
 
@@ -54,6 +57,7 @@ const Index = () => {
             onSpinComplete={handleSpinComplete}
             isSpinning={isSpinning}
             onSpinStart={handleSpinStart}
+            selectedItem={selectedItem}
           />
         ) : (
           <div className="text-center">
@@ -67,10 +71,7 @@ const Index = () => {
       </div>
 
       {/* Popups */}
-      <WelcomePopup 
-        isOpen={showWelcome} 
-        onSubmit={handleWelcomeSubmit} 
-      />
+      <WelcomePopup isOpen={showWelcome} onSubmit={handleWelcomeSubmit} />
       <CongratulationsPopup
         isOpen={showCongratulations}
         prize={prize}
