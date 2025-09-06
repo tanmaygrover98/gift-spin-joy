@@ -28,6 +28,8 @@ const Index = () => {
   const handleTryAgain = () => {
     setShowCongratulations(false);
     setPrize('');
+    setHasSubmitted(false);
+    setShowWelcome(true);
   };
 
   return (
